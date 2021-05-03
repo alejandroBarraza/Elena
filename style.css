@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Ruhl", sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -19,13 +19,29 @@ html {
   --background-color: #414141;
   --grey-text: #525252;
 }
+
+@font-face {
+  font-family: "Ruhl";
+  src: url("/fonts/FrankRuhlLibre-Regular.ttf");
+}
+@font-face {
+  font-family: "Ruhl Medium";
+  src: url("/fonts/FrankRuhlLibre-Medium.ttf");
+}
+@font-face {
+  font-family: "Vibes";
+  src: url("/fonts/GreatVibes-Regular.ttf");
+}
+
 h1 {
   font-size: var(--header1);
+  font-family: "Vibes", sans-serif;
 }
 li,
 button,
 label,
 input,
+a,
 p {
   font-size: var(--text);
 }
@@ -43,6 +59,7 @@ h5 {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 ul {
   list-style: none;
@@ -53,18 +70,80 @@ ul {
   justify-content: center;
   align-items: center;
 }
-/* button {
-  padding: 2rem 6rem;
-  color: white;
-  background: #4c6e97;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: background-color 0.5s ease-in-out;
+
+/* nav section  */
+.main-header {
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
 }
-button:hover {
-  background-color: #131c27;
+
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  min-height: 10vh;
+  padding: 2rem 0rem;
 }
-button:focus {
-  background: #16212e;
-} */
+.nav-links {
+  flex: 1 1 20rem;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+#logo {
+  flex: 1 1 20rem;
+}
+
+/* ----------------------------- */
+
+/* hero section */
+.hero {
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 90vh;
+  width: 95%;
+  margin: 0 0 0 auto;
+  overflow: hidden;
+}
+.hero-introduction {
+  flex: 2 1 40rem;
+  text-align: center;
+}
+.hero-introduction h2 {
+  padding: 2rem;
+}
+.hero-introduction p {
+  padding: 5rem 10rem;
+  color: var(--grey-text);
+}
+.hero-introduction a {
+  padding: 2rem 8rem;
+  border: 0.3rem solid black;
+  margin-bottom: 4rem;
+}
+.hero-images {
+  position: relative;
+  flex: 1 1 40rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+  z-index: 1;
+}
+
+.hero-images img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: sepia(0.1);
+}
+.plant {
+  position: absolute;
+  bottom: 0%;
+  left: -20%;
+  z-index: -1;
+  max-width: 80%;
+}
+.plant2 {
+  left: 40%;
+}
