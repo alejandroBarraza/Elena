@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Ruhl", sans-serif;
+  animation: refresh 1s ease-in-out;
 }
 html {
   font-size: 62.5%;
@@ -15,6 +16,7 @@ html {
   --header3: calc(3rem + 1vw);
   --header4: calc(2.4rem + 1vw);
   --text: calc(1.5rem + 1vw); /*  general text like anchor, text , input, etc. */
+  --big-text:calc(2rem + 1vw)
   --special-color: #906272;
   --background-color: #414141;
   --grey-text: #525252;
@@ -125,15 +127,15 @@ nav {
   margin-bottom: 4rem;
 }
 .hero-images {
-  position: relative;
   flex: 1 1 40rem;
   background: linear-gradient(#dad8dd, #dad1d4);
+  position: relative;
   z-index: 1;
 }
 
 .hero-images img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   filter: sepia(0.1);
 }
@@ -143,7 +145,29 @@ nav {
   left: -20%;
   z-index: -1;
   max-width: 80%;
+  animation: shake 2.5s ease-in-out infinite alternate-reverse;
+  
+   
 }
 .plant2 {
   left: 40%;
 }
+
+/* animations */
+@keyframes refresh {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+ @keyframes shake {
+   from {
+    transform: rotateZ(-3deg) rotateX(-10deg);    
+  }
+  to {
+     transform: rotateZ(0deg) rotateX(0deg);    
+     
+   }
+ }
