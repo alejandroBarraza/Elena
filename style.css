@@ -16,9 +16,10 @@ html {
   --header3: calc(3rem + 1vw);
   --header4: calc(2.4rem + 1vw);
   --text: calc(1.5rem + 1vw); /*  general text like anchor, text , input, etc. */
-  --big-text:calc(2rem + 1vw)
+  --big-text: calc(2rem + 1vw);
   --special-color: #906272;
   --background-color: #414141;
+  --burger-color: #a7bb59;
   --grey-text: #525252;
 }
 
@@ -98,6 +99,13 @@ nav {
 #logo {
   flex: 1 1 20rem;
 }
+/* .burger-container{
+  width: 4.8rem;
+  height: 4.8rem;
+  cursor: pointer;
+  border: 3px solid black;
+  transition: all .3s ease-in-out;
+} */
 
 /* ----------------------------- */
 
@@ -111,7 +119,7 @@ nav {
   overflow: hidden;
 }
 .hero-introduction {
-  flex: 2 1 40rem;
+  flex: 2 1 50rem;
   text-align: center;
 }
 .hero-introduction h2 {
@@ -127,7 +135,7 @@ nav {
   margin-bottom: 4rem;
 }
 .hero-images {
-  flex: 1 1 40rem;
+  flex: 1 1 50rem;
   background: linear-gradient(#dad8dd, #dad1d4);
   position: relative;
   z-index: 1;
@@ -146,8 +154,6 @@ nav {
   z-index: -1;
   max-width: 80%;
   animation: shake 2.5s ease-in-out infinite alternate-reverse;
-  
-   
 }
 .plant2 {
   left: 40%;
@@ -155,19 +161,81 @@ nav {
 
 /* animations */
 @keyframes refresh {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
- @keyframes shake {
-   from {
-    transform: rotateZ(-3deg) rotateX(-10deg);    
+@keyframes shake {
+  from {
+    transform: rotateZ(-3deg) rotateX(-10deg);
   }
   to {
-     transform: rotateZ(0deg) rotateX(0deg);    
-     
-   }
- }
+    transform: rotateZ(0deg) rotateX(0deg);
+  }
+}
+
+/* media queries  */
+@media screen and (max-width: 1051px) {
+  /* nav burguer section at mobile version*/
+  .burguer-container {
+    width: 4.8rem;
+    height: 4.8rem;
+    /* border: 2px solid black; */
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .burguer {
+    position: relative;
+    height: 0.4rem;
+    width: 3rem;
+    background: var(--burger-color);
+    border-radius: 8px;
+  }
+
+  .burguer::before,
+  .burguer::after {
+    content: "";
+    position: absolute;
+    height: 0.4rem;
+    width: 3rem;
+    background-color: var(--burger-color);
+    border-radius: 8px;
+  }
+  .burguer::before {
+    transform: translateY(-9px);
+  }
+  .burguer::after {
+    transform: translateY(9px);
+  }
+
+  .nav-links {
+    position: fixed;
+    background-color: var(--background-color);
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: var(--header3);
+  }
+
+  /* hero section  */
+  .hero {
+    width: 100%;
+  }
+  .hero-introduction p {
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+}
