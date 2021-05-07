@@ -99,15 +99,6 @@ nav {
 #logo {
   flex: 1 1 20rem;
 }
-/* .burger-container{
-  width: 4.8rem;
-  height: 4.8rem;
-  cursor: pointer;
-  border: 3px solid black;
-  transition: all .3s ease-in-out;
-} */
-
-/* ----------------------------- */
 
 /* hero section */
 .hero {
@@ -159,6 +150,48 @@ nav {
   left: 40%;
 }
 
+/* about section  */
+
+.about {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+.about-image {
+  flex: 1 1 40rem;
+  position: relative;
+}
+.about-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.about-image h5 {
+  font-size: var(--header2);
+  font-weight: 300;
+  position: absolute;
+  color: white;
+  letter-spacing: 2rem;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+.about-text {
+  padding: 3rem 8rem;
+  flex: 2 1 40rem;
+  background: var(--background-color);
+  color: white;
+  justify-content: space-around;
+}
+.about-text h2 {
+  font-family: "Vibes";
+  font-weight: 400;
+}
+.about-life h3,
+.about-work h3,
+.about-contact h3 {
+  padding-bottom: 2rem;
+}
 /* animations */
 @keyframes refresh {
   from {
@@ -255,5 +288,14 @@ nav {
   .hero-introduction p {
     padding: 0rem 3rem 3rem 3rem;
     text-align: center;
+  }
+  /* about section  */
+  .about-text {
+    padding: 2rem 4rem;
+  }
+  .about-life h3,
+  .about-work h3,
+  .about-contact h3 {
+    padding: 0.5rem 0.5rem;
   }
 }

@@ -1,4 +1,4 @@
-// selecttors
+// selectors
 const buttonBurguer = document.querySelector(".burguer-container");
 const burguer = document.querySelector(".burguer");
 const navBurguer = document.querySelector(".nav-links");
