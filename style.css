@@ -181,9 +181,10 @@ nav {
 @media screen and (max-width: 1051px) {
   /* nav burguer section at mobile version*/
   .burguer-container {
+    position: relative;
     width: 4.8rem;
     height: 4.8rem;
-    /* border: 2px solid black; */
+    /* border: 2px solid greenyellow; */
     transition: all 0.3s ease-in-out;
     display: flex;
     justify-content: center;
@@ -196,6 +197,7 @@ nav {
     width: 3rem;
     background: var(--burger-color);
     border-radius: 8px;
+    /* transition: transform 0.5s ease-in-out; */
   }
 
   .burguer::before,
@@ -206,6 +208,7 @@ nav {
     width: 3rem;
     background-color: var(--burger-color);
     border-radius: 8px;
+    transition: all 0.5s ease;
   }
   .burguer::before {
     transform: translateY(-9px);
@@ -213,21 +216,36 @@ nav {
   .burguer::after {
     transform: translateY(9px);
   }
-
+  /* cross animation burguer */
+  .burguer.openCross {
+    /* transform: translateX(-30px); */
+    background: transparent;
+  }
+  .burguer.openCross::before {
+    transform: rotate(45deg);
+  }
+  .burguer.openCross::after {
+    transform: rotate(-45deg);
+  }
+  /* ------------- */
   .nav-links {
     position: fixed;
     background-color: var(--background-color);
-    top: 100%;
+    bottom: 100%;
     left: 0;
     height: 100%;
     width: 100%;
     flex-direction: column;
     align-items: center;
+    transition: bottom 0.8s ease-in-out;
   }
 
   .nav-links li a {
     color: white;
     font-size: var(--header3);
+  }
+  .nav-links.open {
+    bottom: 0;
   }
 
   /* hero section  */
@@ -235,7 +253,7 @@ nav {
     width: 100%;
   }
   .hero-introduction p {
-    padding: 2rem 3rem;
+    padding: 0rem 3rem 3rem 3rem;
     text-align: center;
   }
 }
